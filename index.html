@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con Historial</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #333;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 100%;
+        }
+
+        .display {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: gray solid 5px;
+            text-align: right;
+        }
+
+        .history {
+        display: flex;
+        flex-direction: column; /* Asegura que cada entrada esté en una nueva línea */
+        font-size: 0.8em;
+        color: #888;
+        min-height: 80px;
+        border-bottom: 2px solid #888;
+        max-height: 200px; /* Ajusta según tus necesidades */
+        overflow-y: auto;
+        }
+
+        .result {
+            font-size: 1.5em;
+            min-height: 50px;
+            text-align: right;
+            color: rgb(86, 83, 83);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #666;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 27px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+    <div class="calculator">
+        <div class="display">
+            <div id="history" class="history"></div>
+            <div id="result" class="result"></div>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-dark opacity-75" onclick="clearDisplay()">C</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('/')">/</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('*')">*</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('1')">1</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('-')">-</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('0')">0</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('.')">.</button>
+            <button class="btn btn-dark opacity-75" onclick="calculateResult()">=</button>
+            <button class="btn btn-dark opacity-75" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+    <!-- Agrega el enlace al archivo JavaScript de Bootstrap (si es necesario) -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
